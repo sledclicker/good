@@ -44,6 +44,29 @@
       <a onclick="eggy()">Eggy Car</a><br><br>
     </div>
   </div>
+  <center><h1>Unblocked Search (not logged)</h1></center>
+  <header>
+    <form id="searchForm">
+      <input type="text" id="searchQuery" placeholder="Enter your search query here..." />
+      <button type="submit">Search</button>
+    </form>
+  </header>
+  <iframe id="searchFrame" src="https://www.google.com" title="Search Results"></iframe>
+
+  <script>
+    const searchForm = document.getElementById('searchForm');
+    const searchQuery = document.getElementById('searchQuery');
+    const searchFrame = document.getElementById('searchFrame');
+
+    searchForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = encodeURIComponent(searchQuery.value.trim());
+      if (query) {
+        // Update the iframe with the search results
+        searchFrame.src = `https://www.google.com/search?q=${query}`;
+      }
+    });
+  </script>
   <style>
 
   .dropdown {
