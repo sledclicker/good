@@ -36,7 +36,29 @@ function subway_surfers() {
 function yohoho() {
   document.write("<iframe src='https://yohoho.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
 }
+//Gaming Websites
 
+function monkey() {
+  document.write("<iframe src='https://monkeygg2.github.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
+}
+}
+function highway() {
+  document.write("<iframe src='https://highwayracer.github.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
+}
+}
+function poki() {
+  document.write("<iframe src='' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
+}
+}
+function monster() {
+  document.write("<iframe src='https://monstertracks.github.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
+}
+}
+function eggy() {
+  document.write("<iframe src='https://eggycar.github.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
+}
+
+//Other things
 function houseofhazards() {
   document.write("<iframe src='https://houseofhazards.com' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ");
 }
