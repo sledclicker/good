@@ -3,6 +3,7 @@ html {
   width: 100%;
   background-image:url("https://www.teachhub.com/wp-content/uploads/2021/08/Aug-19-The-Importance-of-Background-Knowledge-in-Understanding-Text_web.jpg");
   background-repeat:no-repeat;
+  font-family:sans-serif;
 }
 
 .dropdown {
