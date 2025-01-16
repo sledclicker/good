@@ -1,58 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartSchool</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="script.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script defer src="script.js"></script>
 </head>
-  <SCRIPT>
-  function passWord() {
-      var testV = 1;
-      var pass1 = prompt('Please Enter Your Password',' ');
-      while (testV < 3) {
-          if (!pass1) history.go(-1);
-          if (pass1.toLowerCase() == "letmein") {
-              alert('We will redirect you shortly...');
-              window.open('你好.html');
-              break;
-          } 
-          testV+=1;
-          var pass1 = prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-      }
-      if (pass1.toLowerCase()!="password" & testV ==3) history.go(-1);
-      return " ";
-  }
-  </SCRIPT>
-
 <body>
   <center>
-    <h1 style="background-color:white;">Smartschool</h1><br><h2 style="background-color:white;">Login to smartschool</h2>
-    <hr color="black">
-    <CENTER>
-    <FORM>
-    <p style="background-color:white;">Sign in options:</p>
-    <div style="float:right;">
-    <input type="button" value="Click to enter password" onClick="passWord()"><button id="openPopup" title="Good for clicking away...">Open Popup Window</button>
-<button type="button" class="login-with-google-btn" >
-  Sign in with Google
-</button>
-    </div>
-    </FORM>
-    </CENTER>
-    <div>
-
-    </div>
+    <h1 style="background-color:white;">SmartSchool</h1>
+    <h2 style="background-color:white;">Login to SmartSchool</h2>
+    <hr>
+    <form>
+      <p style="background-color:white;">Sign in options:</p>
+      <div>
+        <input type="button" value="Click to enter password" onclick="passWord()">
+        <button id="openPopup" title="Good for clicking away...">Open Popup Window</button>
+        <button type="button" class="login-with-google-btn">Sign in with Google</button>
+      </div>
+    </form>
   </center>
-  
-  <script src="script.js"></script>
+  <footer>
+    <p>SmartSchool is an educational program that supports K-8 Learning</p>
+    <p><i>“SmartSchool hits differently”</i> — Morris Grenwitch (7th Grader at Farsville High School)</p>
+    <caption>COPYRIGHT ©2025 SmartSchool</caption>
+  </footer>
 </body>
-<footer height="1.5cm" width="100%">
-<p style="background-color:white;">SmartSchool is an educational program that supports K-8 Learning</p><br>
-  <p style="background-color:white;"><I style="background-color:white;">SmartSchool hits differently</I> --Morris Grenwitch (7th Grader at Farsville High School)</p>
-  <caption>COPYRIGHT ©2025 SmartSchool</caption>
-</footer>
-  
 </html>
