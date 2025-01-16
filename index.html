@@ -1,177 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="style.css">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <title>SmartSchool</title>
-  <link rel="icon" type="image/x-icon"
-    href="https://i1.pickpik.com/photos/184/716/976/chalkboard-slate-green-blackboard-preview.jpg">
-  <script src="script.js"></script>
-    <center><h1>SmartSchool (unblocked) | CactiPapa Foundation</h1></center><br><br><br>
-   <center> <h2><--- Choose a website (click one)</h2>  <img class="xdropbtn" onclick="info()" class="sidaelogo" style="float:right; width: 2.3cm; padding: 0.2cm; height:2.3cm;"src="https://i1.pickpik.com/photos/184/716/976/chalkboard-slate-green-blackboard-preview.jpg"></center>
-
-    <hr>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-  <center>Visit other website! <a href="othersite.html">Click here</a></center>
-<div class="cldeverhead">
-  <div class="dropdown">
-
-    <div style="float:left;">
-      <a onclick="gdash()">Geometry Dash</a><br><br>
-      <a onclick="gspot()">Geometry Spot</a><br><br>
-      <a onclick="minecraft()">Minecraft</a><br><br>
-      <a onclick="linerider()">Line Rider</a><br><br>
-      <a onclick="roblox()">Roblox</a><br><br>
-      <a onclick="sus()">Among Us</a><br><br>
-      <a onclick="yohoho()">Yohoho.io</a><br><br>
-      <a onclick="houseofhazards()">House of Hazards</a><br><br>
-      <a onclick="paper_io()">Paper IO 2</a><br><br>
-      <a onclick="flyufo()">flyUFO.IO</a><br><br>
-      <a onclick="paperanimals()">Animals.IO</a><br><br>
-      <a onclick="subway_surfers()">Subway Surfers</a><br><br>
-      <a onclick="bitlife()">Bitlife</a><br><br>
-      <a onclick="stickman_hook()">Stickman Hook</a><br><br>
-    </div>
-  </div>
-  <center>Huge Gaming Websites</center>
-  <div class="dropdown">
-
-    <div style="float:left;">
-      <a onclick="monkey()">MonkeyGG2 (<b>Most Popular!</b>)</a><br><br>
-      <a onclick="poki()">POKI (<b>UNDER CONSTRUCTION</b>)</a><br><br>
-      <a onclick="highway()">Highway Racer (.github.io)</a><br><br>
-      <a onclick="monster()">Monster Tracks (.github.io)</a><br><br>
-      <a onclick="eggy()">Eggy Car</a><br><br>
-    </div>
-  </div>
-  <center><h1>Unblocked Search (not logged)</h1></center>
-  <header>
-    <form id="searchForm">
-      <input type="text" id="searchQuery" placeholder="Enter your search query here..." />
-      <button type="submit">Search</button>
-    </form>
-  </header>
-  <iframe style="width:80%; height:20cm;" id="searchFrame" src="https://www.google.com" title="Search Results"></iframe>
-
-  <script>
-    const searchForm = document.getElementById('searchForm');
-    const searchQuery = document.getElementById('searchQuery');
-    const searchFrame = document.getElementById('searchFrame');
-
-    searchForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const query = encodeURIComponent(searchQuery.value.trim());
-      if (query) {
-        // Update the iframe with the search results
-        searchFrame.src = `https://www.bing.com/search?q=${query}`;
+  <SCRIPT>
+  function passWord() {
+      var testV = 1;
+      var pass1 = prompt('Please Enter Your Password',' ');
+      while (testV < 3) {
+          if (!pass1) history.go(-1);
+          if (pass1.toLowerCase() == "letmein") {
+              alert('You Got it Right!');
+              window.open('你好.html');
+              break;
+          } 
+          testV+=1;
+          var pass1 = prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
       }
-    });
-  </script>
-  <style>
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
+      if (pass1.toLowerCase()!="password" & testV ==3) history.go(-1);
+      return " ";
   }
+  </SCRIPT>
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+<body>
+  <center>
+    <h1>Smartschool</h1><br><h2>Login to smartschool</h2>
+    <hr color="black">
+    <CENTER>
+    <FORM>
+    <div>
+    <input type="button" value="Click to enter password" onClick="passWord()">
+    </div>
+    </FORM>
+    </CENTER>
+    <div>
 
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .dropdown-content a:hover {background-color: #ddd;}
-
-  .dropdown:hover .dropdown-content {display: block;}
-
-  .dropdown:hover .dropbtn
-  </style>
-
-
-
-
+    </div>
+  </center>
   
-  
-        <!-- End Top Section -->
-        <!-- Start Middle Section -->
-      
+  <script src="script.js"></script>
 </body>
-<script>
- 
-</script>
-<style>
-  .sidelogo {
-    float: left;
-    width: 2cm;
-    height: 2cm;
-    padding: 0.3125cm;
-    font-size: 2.2cm;
+<footer height="1.5cm" width="100%">
 
-  }
-
-  .click {
-    width: 64;
-    height: 64;
-    border-color: gray;
-  }
-
-  .click:hover {
-    width: 64;
-    height: 64;
-    border-color: gray;
-    border-radius: 64;
-  }
-
-  .box {
-    border-radius: 8in;
-    width: 0.55;
-    height: 0.25;
-    font-family: sans-serif;
-  }
-
-  .head {
-    font-size: 0.5cm;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .head:hover {
-    font-size: 0.5cm;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
-  }
-
-  .cleverhead {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(54, 54, 232);
-    color: white;
-    width: 100%;
-    float: center;
-    height: 2.5cm;
-
-  }
-
-  html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: white;
-    color: black;
-
-  }
-</style>
-<hr color="black">
-  <h1>Made by CactiPapa</h1><br>
-    <p>Version 3.1BETA</p><br>
-  <p>Any suggestions? Put them down here</p><br>
-  <input type="text" placeholder="Put suggestions here:">
-  <button onclick="alert('Thank you for your feedback, we will respond to you soon!')">Submit</button>
+</footer>
+  
 </html>
