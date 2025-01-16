@@ -1,3 +1,11 @@
+    document.getElementById("openPopup").addEventListener("click", function () {
+      // Open a new window or tab
+      window.open(
+        "https://ajm19826.github.io/home", // URL of the new window
+        "_blank",                 // Target (_blank, _self, etc.)
+        "width=600,height=400"    // Window features (size, etc.)
+      );
+    });
 function gdash() {
   document.write("<iframe src='https://geometrydashonline.io' allowtransparency='true' width='100%' height='100%' frameborder='0' scrolling='yes' allowfullscreen></iframe> <button onclick='window.reload()'>Back</button> ")
 }
