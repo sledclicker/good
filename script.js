@@ -8,7 +8,7 @@ function passWord() {
 
   while (attempts < maxAttempts) {
     const password = prompt("Please Enter Your Password:", "").toLowerCase();
-    if (password === "letmein") {
+    if (password === "logmein") {
       alert("We will redirect you shortly...");
       window.open("你好.html");
       return;
