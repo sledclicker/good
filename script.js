@@ -8,9 +8,9 @@ function passWord() {
 
   while (attempts < maxAttempts) {
     const password = prompt("Please Enter Your Password:", "").toLowerCase();
-    if (password === "logmein") {
+    if (password === "ben10") {
       alert("We will redirect you shortly...");
-      window.open("你好.html");
+      window.open("鴨子.html");
       return;
     } else {
       alert("Access Denied - Password Incorrect. Try Again.");
