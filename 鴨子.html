@@ -1,46 +1,116 @@
-
-<title>SmartSchool</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartSchool Games - A collection of fun and engaging games for students.">
+  <meta name="author" content="CactiPapa">
+  <title>SmartSchool</title>
   <link rel="icon" type="image/x-icon" href="https://i1.pickpik.com/photos/184/716/976/chalkboard-slate-green-blackboard-preview.jpg">
-<h2>FreeGames by CactiPapa</h2>
-<a href="index.html">Log out</a><form><input type="text" placeholder="Put a suggestion here"><button onclick="alert('Thanks! We will look at your suggestion shortly.')">Submit suggestion</button></form>
-<link href='https://fonts.googleapis.com/css?family=ADLaM Display' rel='stylesheet'>
-  <link href="mainfilestyle.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=ADLaM+Display" rel="stylesheet">
+  <link href="mainfilestyle.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      color: #0ED9E7;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-body {
-    font-family: Ariel;font-size: 28px; color: #0ED9E7;
-}
-style
-a:link {
-  color:#163ce7;
-  background-color: transparent;
-  text-decoration: stroke="6px";
-}
+    h2 {
+      color: #0ED9E7;
+    }
 
-a:visited {
-  color:#163ce7;
-  background-color: transparent;
-  text-decoration: stroke="6px";
-}
+    a {
+      color: #163ce7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-a:hover {
-  color:#0ee7bf;
-  background-color: transparent;
-  text-decoration: stroke="9px";
-}
+    a:hover {
+      color: #0ee7bf;
+    }
 
-a:active {
-  color:#163ce7;
-  background-color: transparent;
-  text-decoration: stroke="6px";
-  outline-color:black
-  
-}
-</style>
-</style>
-<iframe style="float:left;" src="https://monkeygg2.github.io" name="iframe_a" height="99%" width="99%" title="SmartSchool-Owned"></iframe>
-<div style="float:right; background-color:white; color:black;">
-<p><a href="https://geometryspot.com" target="iframe_a">Geometry Spot</a></p>
+    form {
+      margin-top: 20px;
+    }
+
+    form input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      margin-right: 10px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #0ED9E7;
+      border: none;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #0cc3c7;
+    }
+
+    iframe {
+      float: left;
+      width: 75%;
+      height: 100vh;
+      border: none;
+    }
+
+    .links-container {
+      float: right;
+      width: 23%;
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    .links-container p,
+    .links-container ol {
+      margin: 0 0 10px 0;
+    }
+
+    .links-container a {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #0ED9E7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Free Games by CactiPapa</h2>
+    <a href="index.html" aria-label="Log out">Log out</a>
+    <form onsubmit="handleSuggestion(event)">
+      <input type="text" placeholder="Put a suggestion here" aria-label="Suggestion input">
+      <button type="submit">Submit suggestion</button>
+    </form>
+  </header>
+
+  <iframe src="https://monkeygg2.github.io" name="iframe_a" title="SmartSchool-Owned"></iframe>
+
+  <div class="links-container">
+    <h3>Games:</h3>
+    <p><a href="https://geometryspot.com" target="iframe_a">Geometry Spot</a></p>
 <p><a href="https://highwayracer.github.io" target="iframe_a">Highway Racer (.github.io)</a></p>
 <p><a href="https://1v1.lol" target="iframe_a">1v1.lol</a></p>
 <p><a href="https://dddavit.github.io/subway" target="iframe_a">Subway surfers</a></p>
@@ -63,37 +133,39 @@ a:active {
 <p><a href="https://geometrydash-game.io/bullet-bros" target="iframe_a">Bullet Bros</a></p>
 <p><a href="https://monstertracks.github.io" target="iframe_a">Monster Tracks</a></p>
 <p><a href="https://shuttleproxy.com/" target="iframe_a">Shuttle</a></p>
-<p><a href="https://ubg44.github.io/" target="iframe_a">Unity Unblocked Games (ubg44)</a></p><br><h2>Coming soon:</h2>
+<p><a href="https://ubg44.github.io/" target="iframe_a">Unity Unblocked Games (ubg44)</a></p><br>
 <p><a href="https://eaglecraft.pages.dev/" target="iframe_a">Minecraft 1.8</a></p><br><h2>Coming soon:</h2>
-	<ol>
-		<li>House of Hazards</li>
-		<li>Roblox</li>
-	 	<li>Slither.IO</li>
-		<li>Poki</li>
+    
+    <h3>Coming Soon:</h3>
+    <ol>
+      <li>House of Hazards</li>
+      <li>Roblox</li>
+      <li>Slither.IO</li>
+      <li>Poki</li>
+    </ol>
 
-	</ol>
-<b>Other Notes:</b><br>
-	<p>Put in the shuttle search bar (<i>proxy</i>) for poki</p>
-	<p>Most games will be in one of the main websites like:</p>
-	<p>MonkeyGG2</p>
-	<p>Monster Tracks</p>
-	<p>Unity Unblocked Games (ubg44)</p>
-	<p>Highway Racer</p>
+    <h3>Notes:</h3>
+    <p>Most games are available on:</p>
+    <ul>
+      <li>MonkeyGG2</li>
+      <li>Monster Tracks</li>
+      <li>Unity Unblocked Games</li>
+      <li>Highway Racer</li>
+    </ul>
+  </div>
 
-</div>
-_______________________________________________________________________
-<p>Made by CactiPapa</p>
+  <footer>
+    <p>Made by CactiPapa</p>
+    <p>🎉🎉🎉 v6.2 beta 🎉🎉🎉</p>
+    <p>Updated almost every day</p>
+    <p><strong>Patch notes:</strong> Password-locked website</p>
+  </footer>
 
-<p>🎉🎉🎉 v6.1 beta 🎉🎉🎉</p>
-<p>Updated almost every day</p>
-<p>Patch notes:</p>
-<b>Password-locked website</b>
-
-
-<style>
-    body {
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
+  <script>
+    function handleSuggestion(event) {
+      event.preventDefault();
+      alert('Thanks! We will look at your suggestion shortly.');
     }
-    </style>
+  </script>
+</body>
+</html>
