@@ -14,7 +14,24 @@
     <h1>SmartSchool FreeGames</h1>
     <hr>
   </header>
+ <script>
+    const iframe = document.getElementById('myIframe');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
 
+    fullscreenBtn.addEventListener('click', () => {
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      } else {
+        alert('Fullscreen is not supported in your browser.');
+      }
+    });
+  </script>
   <main class="games-container">
     <!-- Games List -->
     <div class="games-list">
@@ -47,7 +64,7 @@
     </div>
 
     <!-- iFrame for Game Content -->
-    <iframe class="games-iframe" src="https://monkeygg2.github.io" name="iframe_a" title="FreeGames Content"></iframe>
+    <iframe id="myIframe" class="games-iframe" src="https://monkeygg2.github.io" name="iframe_a" title="FreeGames Content"></iframe>
   </main>
 
   <footer>
