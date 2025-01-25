@@ -15,25 +15,24 @@
     <hr>
   </header>
    <script>
-    // Access iframe and fullscreen button
-    const iframe = document.getElementById('myIframe');
-    const fullscreenBtn = document.getElementById('fullscreenBtn');
+  const iframe = document.getElementById('myIframe');
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-    // Event listener for fullscreen button
-    fullscreenBtn.addEventListener('click', () => {
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
-      } else {
-        alert('Fullscreen is not supported in your browser.');
-      }
-    });
-  </script>
+  fullscreenBtn.addEventListener('click', () => {
+    // Check if fullscreen is supported
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+      iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+      iframe.msRequestFullscreen();
+    } else {
+      alert('Fullscreen is not supported in your browser.');
+    }
+  });
+</script>
   <main class="games-container">
     <!-- Games List -->
     <div class="games-list">
@@ -70,13 +69,8 @@
     </div>
 
     <!-- iFrame for Game Content -->
-    <iframe id="myIframe" class="games-iframe" 
-        src="https://monkeygg2.github.io" 
-        name="iframe_a" 
-        title="FreeGames Content" 
-        allowfullscreen 
-        allow="fullscreen">
-    </iframe>
+    <iframe id="myIframe" class="games-iframe" src="https://monkeygg2.github.io" allowfullscreen></iframe>
+
   </main>
 
   <footer>
