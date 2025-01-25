@@ -14,16 +14,18 @@
     <h1>SmartSchool FreeGames</h1>
     <hr>
   </header>
- <script>
+   <script>
+    // Access iframe and fullscreen button
     const iframe = document.getElementById('myIframe');
     const fullscreenBtn = document.getElementById('fullscreenBtn');
 
+    // Event listener for fullscreen button
     fullscreenBtn.addEventListener('click', () => {
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.mozRequestFullScreen) { // Firefox
         iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
         iframe.webkitRequestFullscreen();
       } else if (iframe.msRequestFullscreen) { // IE/Edge
         iframe.msRequestFullscreen();
@@ -63,16 +65,18 @@
 <p><a href="https://shuttleproxy.com/" target="iframe_a">Shuttle</a></p>
 <p><a href="https://ubg44.github.io/" target="iframe_a">Unity Unblocked Games (ubg44)</a></p><br><h2>Coming soon:</h2>
 <p><a href="https://eaglecraft.pages.dev/" target="iframe_a">Minecraft 1.8</a></p><br><h2>Coming soon:</h2>
+<p><a href="https://astrogames06.github.io/" target="iframe_a">Astrogames (Github)</a></p>
+
     </div>
 
     <!-- iFrame for Game Content -->
-<iframe id="myIframe" class="games-iframe" 
+    <iframe id="myIframe" class="games-iframe" 
         src="https://monkeygg2.github.io" 
         name="iframe_a" 
         title="FreeGames Content" 
         allowfullscreen 
         allow="fullscreen">
-</iframe>
+    </iframe>
   </main>
 
   <footer>
