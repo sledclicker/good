@@ -10,7 +10,7 @@ function passWord() {
     const password = prompt("Please Enter Your Password:", "").toLowerCase();
     if (password === "ben10") {
       alert("We will redirect you shortly...");
-      window.open("鴨子.html");
+      window.open("中國.html");
       return;
     } else {
       alert("Access Denied - Password Incorrect. Try Again.");
