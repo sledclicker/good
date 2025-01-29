@@ -3,9 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartSchool</title>
+  <title>SmartSchool | Login</title>
   <link href="style.css" rel="stylesheet" type="text/css">
   <script defer src="script.js"></script>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    header h2 {
+        margin: 10px 0 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+    main {
+        padding: 20px;
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+        background-color: #333;
+        color: white;
+    }
+    .login-with-google-btn {
+        background-color: #DB4437;
+        color: white;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f4f4f9;
+        color: #666;
+        font-size: 0.9rem;
+    }
+    footer a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+    blockquote {
+        font-style: italic;
+        color: #555;
+        margin: 15px 0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,8 +97,8 @@
       <form>
         <p>Sign in options:</p>
         <div class="button-container">
-          <button type="button" onclick="passWord()">Click to Enter Password</button>
-          <button id="openPopup" type="button" title="Good for clicking away...">Open Popup Window</button>
+          <button type="button" onclick="passWord()">Enter Password</button>
+          <button id="openPopup" type="button" title="Opens a helpful popup window">Open Popup Window</button>
           <button type="button" class="login-with-google-btn">Sign in with Google</button>
         </div>
       </form>
@@ -30,7 +108,7 @@
   <footer>
     <p>SmartSchool is an educational program that supports K-8 Learning.</p>
     <blockquote>
-      <i>“SmartSchool is better”</i> — Austin Lynsada (8th Grader at Junior Middle School)
+      <i>“SmartSchool is better”</i> — Austin Lynsada, 8th Grader at Junior Middle School
     </blockquote>
     <p>COPYRIGHT ©2025 SmartSchool | <a href="credits.txt">View Credits</a></p>
   </footer>
