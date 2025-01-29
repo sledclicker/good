@@ -1,61 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartSchool FreeGames</title>
-  <link href="mainfilestyle.css" rel="stylesheet" type="text/css">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSchool FreeGames</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="mainfilestyle.css">
+    <link rel="stylesheet" href="style">
 
-  <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+        .game-column {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .game-column p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        footer {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <header>
+
     <h1>SmartSchool FreeGames</h1>
-    <hr>
-  </header>
-   <script>
-  const iframe = document.getElementById('myIframe');
-  const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-  fullscreenBtn.addEventListener('click', () => {
-    // Check if fullscreen is supported
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-      iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-      iframe.msRequestFullscreen();
-    } else {
-      alert('Fullscreen is not supported in your browser.');
-    }
-  });
-</script>
-  <style>
-    
-  </style>
-      <iframe id="myIframe" class="games-iframe" name="iframe_a" src="https://monkeygg2.github.io" allowfullscreen></iframe>
-
-  <main class="games-container">
-    <!-- Games List -->
-    <div class="gameslist">
-      <h2>Games List</h2>
-     <div><br><p><a href="https://geometryspot.com" target="iframe_a">Geometry Spot</a></p><p><a href="https://highwayracer.github.io" target="iframe_a">Highway Racer (.github.io)</a></p><p><a href="https://1v1.lol" target="iframe_a">1v1.lol</a></p><p><a href="https://dddavit.github.io/subway" target="iframe_a">Subway surfers</a></p><p><a href="https://www.friv.com/z/games/basketchamps/game.html" target="iframe_a">basket champs</a></p><br></div>
-<div><p><a href="https://ubg365.github.io/gunspin/play.html" target="iframe_a">Spin</a></p><p><a href="https://mathplayground.com" target="iframe_a">PANIC</a></p><p><a href="https://monkeygg2.github.io" target="iframe_a">MonkeyGG2</a></p><p><a href="https://littlealchemy2.com" target="iframe_a">Little Alchemy 2</a></p><p><a href="https://Neal.fun" target="iframe_a">Neal.fun</a></p><br></div>
-<div><p><a href="https://lolbeans.io/" target="iframe_a">Beans Lol</a></p><p><a href="https://linerider.com" target="iframe_a">Line Rider</a></p><p><a href="https://mathgames69.github.io" target="iframe_a">Mathgames69</a></p><p><a href="https://swordslasher.com/games/ovo3/" target="iframe_a">OVO Dimensions (ovo 3)</a></p><p><a href="https://poki.to" target="iframe_a">poki (kids version is the only one that works)</a></p><p><a href="https://www.proxysite.com/" target="iframe_a">Proxy(kind of annoying to use)</a></p><p><a href="https://ovo.drakeerv.com/" target="iframe_a">OVO mod home</a></p><p><a href="https://gooberdash.winterpixel.io/" target="iframe_a">Goober Dash</a></p><p><a href="https://monstertracks.github.io/go/class-368.html#" target="iframe_a">Make It Meme</a></p><br><div>
-<div><p><a href="https://infinite-craft.com" target="iframe_a">Infinite Craft</a></p><p><a href="https://geometrydash-game.io/bullet-bros" target="iframe_a">Bullet Bros</a></p><p><a href="https://monstertracks.github.io" target="iframe_a">Monster Tracks</a></p><p><a href="https://shuttleproxy.com/" target="iframe_a">Shuttle</a></p><br></div>
-<div><p><a href="https://ubg44.github.io/" target="iframe_a">Unity Unblocked Games (ubg44)</a></p><br><p><a href="https://eaglecraft.pages.dev/" target="iframe_a">Minecraft 1.8</a></p><br><h2>Coming soon:</h2><p><a href="https://astrogames06.github.io/" target="iframe_a">Astrogames (Github)</a></p><br></div>
-
+    <div class="container">
+        <div class="game-column">
+            <p><a href="https://geometryspot.com" target="iframe_a">Geometry Spot</a></p>
+            <p><a href="https://highwayracer.github.io" target="iframe_a">Highway Racer</a></p>
+            <p><a href="https://1v1.lol" target="iframe_a">1v1.lol</a></p>
+            <p><a href="https://dddavit.github.io/subway" target="iframe_a">Subway Surfers</a></p>
+            <p><a href="https://www.friv.com/z/games/basketchamps/game.html" target="iframe_a">Basket Champs</a></p>
+        </div>
+        <div class="game-column">
+            <p><a href="https://ubg365.github.io/gunspin/play.html" target="iframe_a">Spin</a></p>
+            <p><a href="https://mathplayground.com" target="iframe_a">PANIC</a></p>
+            <p><a href="https://monkeygg2.github.io" target="iframe_a">MonkeyGG2</a></p>
+            <p><a href="https://littlealchemy2.com" target="iframe_a">Little Alchemy 2</a></p>
+            <p><a href="https://Neal.fun" target="iframe_a">Neal.fun</a></p>
+        </div>
+        <div class="game-column">
+            <p><a href="https://lolbeans.io/" target="iframe_a">Beans Lol</a></p>
+            <p><a href="https://linerider.com" target="iframe_a">Line Rider</a></p>
+            <p><a href="https://mathgames69.github.io" target="iframe_a">Mathgames69</a></p>
+            <p><a href="https://swordslasher.com/games/ovo3/" target="iframe_a">OVO Dimensions (OVO 3)</a></p>
+            <p><a href="https://poki.to" target="iframe_a">Poki</a></p>
+        </div>
+        <div class="game-column">
+            <p><a href="https://infinite-craft.com" target="iframe_a">Infinite Craft</a></p>
+            <p><a href="https://geometrydash-game.io/bullet-bros" target="iframe_a">Bullet Bros</a></p>
+            <p><a href="https://monstertracks.github.io" target="iframe_a">Monster Tracks</a></p>
+            <p><a href="https://shuttleproxy.com/" target="iframe_a">Shuttle Proxy</a></p>
+        </div>
+        <div class="game-column">
+            <p><a href="https://ubg44.github.io/" target="iframe_a">Unity Unblocked Games</a></p>
+            <p><a href="https://eaglecraft.pages.dev/" target="iframe_a">Minecraft 1.8</a></p>
+            <h2>Coming soon:</h2>
+            <p><a href="https://astrogames06.github.io/" target="iframe_a">Astrogames (Github)</a></p>
+        </div>
     </div>
 
-    <!-- iFrame for Game Content -->
+    <footer>
+        <p>SmartSchool FreeGames ©2025</p>
+    </footer>
 
-  </main>
-
-  <footer>
-    <p>SmartSchool FreeGames ©2025</p>
-  </footer>
 </body>
 </html>
