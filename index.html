@@ -78,10 +78,19 @@
     footer a:hover {
         text-decoration: underline;
     }
-    blockquote {
+blockquote {
         font-style: italic;
         color: #555;
         margin: 15px 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .quote-container {
+        display: inline-block;
+        position: relative;
+    }
+    .quote-container.active {
+        opacity: 1;
     }
   </style>
 </head>
@@ -107,10 +116,38 @@
 
   <footer>
     <p>SmartSchool is an educational program that supports K-8 Learning.</p>
-    <blockquote>
-      <i>“SmartSchool is better”</i> — Austin Lynsada, 8th Grader at Junior Middle School
-    </blockquote>
+    <div class="quote-container">
+      <blockquote id="quote"></blockquote>
+    </div>
     <p>COPYRIGHT ©2025 SmartSchool | <a href="credits.txt">View Credits</a></p>
   </footer>
+
+  <script>
+    const quotes = [
+      "“SmartSchool is better” — Austin Lynsada, 8th Grader at Junior Middle School",
+      "“Very accessible website to get to multiple learning programs at once!” — Jack Isaiah-Howards, 10th Grader at Middlebrook High School",
+      "“My teacher can see my work and use AI to edit it! So convenient.” — Eleanor Tivaln, 7th Grader at East Grover Public Schools",
+      "“SmartSchool makes doing homework easier” — Steve Fialn, 12th Grader at Pike County Private School",
+      "“Very recommended!!!!” — Grace Homer, 9th Grader at Omaha Public School #29",
+      "“Only 10 million people use this program??!? There has to be more!” — Alexander Woden, 6th Grader at Omaha Public School #08"
+
+    ];
+
+    let currentQuote = 0;
+
+    function changeQuote() {
+      const quoteElement = document.getElementById('quote');
+      quoteElement.classList.remove('active'); // Hide current quote
+      setTimeout(() => {
+        quoteElement.textContent = quotes[currentQuote];
+        quoteElement.classList.add('active'); // Show next quote
+      }, 1000); // Wait for fade out to complete
+      currentQuote = (currentQuote + 1) % quotes.length;
+    }
+
+    setInterval(changeQuote, 5000); // Change quote every 5 seconds
+    changeQuote(); // Initialize with the first quote
+  </script>
+
 </body>
 </html>
