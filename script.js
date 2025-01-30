@@ -50,7 +50,7 @@ function passWord() {
   while (attempts < maxAttempts) {
     const password = prompt("Please Enter Your Password:", "").toLowerCase();
     if (password === "ben10") {
-      alert("We will redirect you shortly...");
+      alert("We will redirect you shortly...\nNot working? Enable popups.");
       window.open("中國.html");
       return;
     } else {
