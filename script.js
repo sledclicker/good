@@ -43,21 +43,7 @@ document.getElementById("openPopup").addEventListener("click", function () {
   window.open("https://ajm19826.github.io/home", "_blank", "width=600,height=400");
 });
 
-function passWord() {
-  let attempts = 0;
-  const maxAttempts = 3;
 
-  while (attempts < maxAttempts) {
-    const password = prompt("Please Enter Your Password:", "").toLowerCase();
-    if (password === "yaywow") {
-      alert("We will redirect you shortly...\nNot working? Enable popups.");
-      window.open("壞的.html");
-      return;
-    } else {
-      alert("Access Denied - Password Incorrect. Try Again.");
-      attempts++;
-    }
-  }
 
   if (attempts === maxAttempts) {
     alert("Too many failed attempts!");
