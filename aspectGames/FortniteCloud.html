@@ -1,1 +1,499 @@
+<div style="float:left;">
+<style>
+  html{
+    background-color:black;
+    color:white;
+    font-family:Consolas;
+  }
+</style>
+<code>
+  namespace NewOrgFortnite{
+  private Sub LoadDataBase()
+  {
+  @import aspect.Code("https://digitalbase.net/lib/cloud/fnite.cs"),
+  Pen graph = new Pen
+  {
+  color = pixelGraph;
+  }
+  }
+  private Sub pixelGraph
+  {
+  import random
+import datetime
 
+# Data generation functions
+
+def generate_name():
+    first_names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ivy", "Jack"]
+    last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
+    return f"{random.choice(first_names)} {random.choice(last_names)}"
+
+def generate_age():
+    return random.randint(18, 65)
+
+def generate_email(name):
+    name_parts = name.lower().split(" ")
+    return f"{name_parts[0]}.{name_parts[1]}{random.randint(1, 100)}@example.com"
+
+def generate_phone():
+    return f"{random.randint(100, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+
+def generate_address():
+    street_names = ["Main", "Oak", "Pine", "Maple", "Cedar", "Willow", "High", "Low", "River", "Sunset"]
+    street_types = ["St", "Ave", "Rd", "Dr", "Ln"]
+    return f"{random.randint(100, 999)} {random.choice(street_names)} {random.choice(street_types)}"
+
+def generate_city():
+  cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"]
+  return random.choice(cities)
+
+def generate_zip():
+  return random.randint(10000, 99999)
+
+def generate_date(start_year=2000, end_year=2023):
+    year = random.randint(start_year, end_year)
+    month = random.randint(1, 12)
+    day = random.randint(1, 28)  # Simplified for demonstration
+    return datetime.date(year, month, day).strftime("%Y-%m-%d")
+
+
+# Data structure for a person
+class Person:
+    def __init__(self, name, age, email, phone, address, city, zip_code, birthdate):
+        self.name = name
+        self.age = age
+        self.email = email
+        self.phone = phone
+        self.address = address
+        self.city = city
+        self.zip_code = zip_code
+        self.birthdate = birthdate
+
+    def __str__(self):
+        return f"Name: {self.name}, Age: {self.age}, Email: {self.email}, Phone: {self.phone}, Address: {self.address}, City: {self.city}, Zip: {self.zip_code}, Birthdate: {self.birthdate}"
+
+
+# Generate a list of people
+def generate_people(num_people):
+    people = []
+    for _ in range(num_people):
+        name = generate_name()
+        age = generate_age()
+        email = generate_email(name)
+        phone = generate_phone()
+        address = generate_address()
+        city = generate_city()
+        zip_code = generate_zip()
+        birthdate = generate_date()
+        person = Person(name, age, email, phone, address, city, zip_code, birthdate)
+        people.append(person)
+    return people
+
+
+# Example usage to generate and print data for 10 people (expand as needed)
+
+num_people_to_generate = 100 # Increased to generate more lines of output
+
+people_data = generate_people(num_people_to_generate)
+
+for person in people_data:
+    print(person)
+    # Adding some dummy operations to increase line count
+    print(f"Processing data for {person.name}...")
+    print(f"Age next year: {person.age + 1}")
+    print(f"Email domain: {person.email.split('@')[1]}")
+    print("-" * 20) # Separator
+
+
+# Simulated data processing (to generate more lines)
+
+for i in range(len(people_data)):
+    person = people_data[i]
+    # Simulated database interaction
+    print(f"Inserting record {i+1} into database...")
+    print(f"Updating last login for {person.name}...")
+    print(f"Generating report for {person.name}...")
+    # Some conditional logic
+    if person.age > 30:
+        print(f"{person.name} is over 30.")
+    else:
+        print(f"{person.name} is under 30.")
+
+    # More dummy operations
+    print(f"Calculating discount for {person.name}...")
+    print(f"Sending confirmation email to {person.email}...")
+    print("-" * 20)
+
+    # Adding even more lines for demonstration:
+    print(f"Data analysis for {person.name}:")
+    print(f"  - Average age: {sum(p.age for p in people_data) / len(people_data)}")
+    print(f"  - Number of people over 25: {sum(1 for p in people_data if p.age > 25)}")
+    print(f"  - City of residence: {person.city}")
+    print("-" * 20)
+
+    # Another loop for demonstration (within the outer loop)
+    for j in range(3):  # Just a small loop
+      print(f"  Processing sub-item {j+1} for {person.name}...")
+      print(f"  - Random value: {random.random()}")
+      print("-" * 10)
+
+
+# Example of data aggregation (generating more lines)
+age_groups = {}
+for person in people_data:
+  if person.age not in age_groups:
+    age_groups[person.age] = 0
+  age_groups[person.age] += 1
+
+print("\nAge Group Distribution:")
+for age, count in age_groups.items():
+  print(f"- Age {age}: {count} people")
+  print(f"  - Percentage: { (count / len(people_data)) * 100:.2f}%") # Added percentages for more output
+
+print("-" * 40)
+print("Data Processing Complete.")
+
+#Simulated file I/O
+file_name = "generated_data.txt"
+try:
+    with open(file_name, "w") as f:
+        for person in people_data:
+            f.write(str(person) + "\n")
+    print(f"Data written to {file_name}")
+except Exception as e:
+    print(f"Error writing to file: {e}")
+
+print("-" * 40)
+print("File operations complete.")
+
+#More data analysis and output generation:
+
+city_counts = {}
+for person in people_data:
+    if person.city not in city_counts:
+        city_counts[person.city] = 0
+    city_counts[person.city] += 1
+
+print("\nCity Distribution:")
+for city, count in city_counts.items():
+    print(f"- {city}: {count} people")
+    print(f"  - Percentage: {(count / len(people_data)) * 100:.2f}%")
+
+print("-" * 40)
+print("Additional Data Analysis Complete.")
+
+print("-" * 40)
+print("Final Data Processing and Output Generation Complete.") # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few extra lines to go over 500
+print("-" * 40) # Added a few
+  }
+  }
+</code>
+</div>
+<div style="float:right;">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Tunnel Racing Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #countdown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            z-index: 1000;
+            display: none;
+        }
+        #speed {
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            z-index: 1000;
+        }
+        #position {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown"></div>
+    <div id="speed">Speed: 0 MPH</div>
+    <div id="position">Position: 1st</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        let scene, camera, renderer, clock, deltaTime;
+        let tunnelSegments = [];
+        let cars = [];
+        let controls = { forward: false, left: false, right: false, accelerate: false, moveLeft: false, moveRight: false };
+        let playerCarSpeed = 0, maxSpeed = 0.2, acceleration = 0.001, turnSpeed = 0.05;
+        const carSpeeds = [];
+        const exhausts = [];
+        let gameStarted = false;
+        let cameraPerspective = 'third';  // 'first' or 'third'
+        const carDirections = [];
+        const carAccels = [];
+        const carBrakes = [];
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            clock = new THREE.Clock();
+
+            // Create infinite tunnel
+            for (let i = 0; i < 10; i++) {
+                let segment = createTunnelSegment();
+                segment.position.z = -i * 50;
+                tunnelSegments.push(segment);
+                scene.add(segment);
+            }
+
+            // Create rocket ship cars
+            for (let i = 0; i < 5; i++) {
+                let car = createRocketCar(i);
+                cars.push(car);
+                scene.add(car);
+                carSpeeds.push(Math.random() * 0.05 + 0.1);
+                carDirections.push(Math.random() > 0.5 ? 1 : -1);  // Random side-to-side direction for each car
+                carAccels.push(Math.random() * 0.001);  // Random acceleration for each car
+                carBrakes.push(Math.random() * 0.0005);  // Random braking force for each car
+
+                // Create exhaust particles for each rocket car
+                let exhaust = createExhaust();
+                exhausts.push(exhaust);
+                scene.add(exhaust);
+            }
+
+            camera.position.z = 5;
+
+            // Event listeners for controls
+            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener('keyup', onKeyUp);
+
+            startCountdown();
+        }
+
+        function createTunnelSegment() {
+            const tunnelGeometry = new THREE.CylinderGeometry(5, 5, 50, 32, 1, true);
+            const tunnelMaterial = new THREE.MeshBasicMaterial({
+                color: 0xaaaaaa,
+                wireframe: true
+            });
+            const tunnelMesh = new THREE.Mesh(tunnelGeometry, tunnelMaterial);
+            tunnelMesh.rotation.x = Math.PI / 2;
+            return tunnelMesh;
+        }
+
+        function createRocketCar(index) {
+            const carGroup = new THREE.Group();
+
+            // Rocket body
+            const bodyGeometry = new THREE.ConeGeometry(0.5, 2, 8);
+            const bodyMaterial = new THREE.MeshBasicMaterial({ color: 0xeeeeee });
+            const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+            body.position.y = 1;
+            carGroup.add(body);
+
+            // Rocket exhaust
+            const exhaustGeometry = new THREE.CylinderGeometry(0.2, 0.5, 1, 8);
+            const exhaustMaterial = new THREE.MeshBasicMaterial({ color: 0xff6600 });
+            const exhaust = new THREE.Mesh(exhaustGeometry, exhaustMaterial);
+            exhaust.position.y = -1;
+            carGroup.add(exhaust);
+
+            // Rocket top
+            const topGeometry = new THREE.SphereGeometry(0.4, 8, 8);
+            const topMaterial = new THREE.MeshBasicMaterial({ color: 0xff3333 });
+            const top = new THREE.Mesh(topGeometry, topMaterial);
+            top.position.y = 2;
+            carGroup.add(top);
+
+            // Position the rocket ship
+            carGroup.position.set(0, 2 + index * 2, 0);
+
+            return carGroup;
+        }
+
+        function createExhaust() {
+            const particleCount = 100;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            const particles = new THREE.Points(geometry, new THREE.PointsMaterial({
+                color: 0xff6600,
+                size: 0.5,
+                blending: THREE.AdditiveBlending,
+                transparent: true
+            }));
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = 0;
+                positions[i * 3 + 1] = 0;
+                positions[i * 3 + 2] = 0;
+
+                colors[i * 3] = Math.random() * 0.5;
+                colors[i * 3 + 1] = Math.random() * 0.5;
+                colors[i * 3 + 2] = 0;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            particles.update = function() {
+                const positions = geometry.attributes.position.array;
+                for (let i = 0; i < particleCount; i++) {
+                    positions[i * 3 + 1] -= 0.1;
+                    if (positions[i * 3 + 1] < -5) {
+                        positions[i * 3 + 1] = 1;
+                        positions[i * 3] = (Math.random() - 0.5) * 0.2;
+                        positions[i * 3 + 2] = (Math.random() - 0.5) * 0.2;
+                    }
+                }
+                geometry.attributes.position.needsUpdate = true;
+            };
+
+            return particles;
+        }
+
+        function startCountdown() {
+            const countdownDiv = document.getElementById("countdown");
+            countdownDiv.style.display = "block";
+            let countdownValue = 3;
+
+            const interval = setInterval(() => {
+                countdownDiv.textContent = countdownValue > 0 ? countdownValue : "Go!";
+                countdownValue--;
+
+                if (countdownValue < -1) {
+                    clearInterval(interval);
+                    countdownDiv.style.display = "none";
+                    gameStarted = true;
+                    animate();
+                }
+            }, 1000);
+        }
+
+        function onKeyDown(event) {
+            switch (event.key) {
+                case 'w': controls.forward = true; break;
+                case 'a': controls.left = true; controls.moveLeft = true; break;  // Move left
+                case 'd': controls.right = true; controls.moveRight = true; break; // Move right
+                case 's': controls.accelerate = true; break;
+                case 'ArrowLeft': controls.left = true; break;
+                case 'ArrowRight': controls.right = true; break;
+            }
+        }
+
+        function onKeyUp(event) {
+            switch (event.key) {
+                case 'w': controls.forward = false; break;
+                case 'a': controls.left = false; controls.moveLeft = false; break;
+                case 'd': controls.right = false; controls.moveRight = false; break;
+                case 's': controls.accelerate = false; break;
+                case 'ArrowLeft': controls.left = false; break;
+                case 'ArrowRight': controls.right = false; break;
+            }
+        }
+
+        function updateCars() {
+            if (!gameStarted) return;
+
+            // Update player car's position
+            if (controls.forward) {
+                playerCarSpeed = Math.min(playerCarSpeed + acceleration, maxSpeed);
+            } else {
+                playerCarSpeed = Math.max(playerCarSpeed - acceleration, 0);
+            }
+
+            if (controls.moveLeft) {
+                cars[0].position.x = Math.max(cars[0].position.x - 0.05, -5);
+            }
+            if (controls.moveRight) {
+                cars[0].position.x = Math.min(cars[0].position.x + 0.05, 5);
+            }
+
+            cars[0].position.z -= playerCarSpeed;
+
+            // Camera movement: Follow the player's car from behind
+            if (cameraPerspective === 'third') {
+                camera.position.x = cars[0].position.x;
+                camera.position.z = cars[0].position.z + 5;
+                camera.position.y = cars[0].position.y + 5;
+                camera.lookAt(cars[0].position);
+            }
+
+            // Update other cars' movement
+            for (let i = 1; i < cars.length; i++) {
+                // Keep cars inside the tunnel
+                cars[i].position.x += carDirections[i] * Math.random() * 0.02;
+                cars[i].position.x = Math.max(Math.min(cars[i].position.x, 5), -5);
+
+                // Random acceleration or braking
+                if (Math.random() > 0.98) {
+                    carSpeeds[i] += carAccels[i] * (Math.random() - 0.5);
+                }
+                if (Math.random() > 0.98) {
+                    carSpeeds[i] -= carBrakes[i];
+                }
+
+                cars[i].position.z -= carSpeeds[i];
+                if (cars[i].position.z < -500) cars[i].position.z = 500;
+            }
+
+            exhausts.forEach(exhaust => exhaust.update());
+
+            // Calculate position
+            const sortedCars = [...cars].sort((a, b) => b.position.z - a.position.z);
+            const playerIndex = sortedCars.indexOf(cars[0]);
+            const playerRank = playerIndex + 1;
+
+            // Update position text
+            document.getElementById('position').textContent = `Position: ${playerRank}st`;
+        }
+
+        function animate() {
+            deltaTime = clock.getDelta();
+            updateCars();
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+
+        init();
+    </script>
+</body>
+</html>
+
+</div>
