@@ -92,7 +92,20 @@ function gdash() {
 function lessons() {
   loadIframe("lesson.html", "Lessons");
 }
+function fortnitePassword() {
+  let attempts = 0;
+  const maxAttempts = 3;
 
+  while (attempts < maxAttempts) {
+    const password = prompt("Please Enter Your Password:", "").toLowerCase();
+    if (password === "2013") {
+      alert("Password accepted -- press OK to continue.");
+      return;
+    } else {
+      alert("Access Denied - Password Incorrect. Try Again.");
+      attempts++;
+    }
+  }
 function minecraft() {
   loadIframe("https://eaglecraft.pages.dev", "Minecraft");
 }
