@@ -103,7 +103,23 @@ blockquote {
     <h3>Questions? Visit SmartGang! <a href="https://ajm19826.github.io/smartgang">smartgang.com/home</a></h3>
     <hr>
   </header>
+<script>
+  function passWord() {
+  let attempts = 0;
+  const maxAttempts = 3;
 
+  while (attempts < maxAttempts) {
+    const password = prompt("Please Enter Your Password:", "").toLowerCase();
+    if (password === "yaywow") {
+      alert("We will redirect you shortly...\nNot working? Enable popups.");
+      window.open("壞的.html");
+      return;
+    } else {
+      alert("Access Denied - Password Incorrect. Try Again.");
+      attempts++;
+    }
+  }
+</script>
   <main>
     <section>
       <form>
