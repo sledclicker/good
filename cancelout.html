@@ -5,5 +5,22 @@
   <h1>Session Expired</h1>
   <hr color="black">
   <p>This page is password locked.</p>
-<button>Enter Password</button>
+<button onclick="passWord()">Enter Password</button>
 </center>
+<script>
+  function passWord() {
+  let attempts = 0;
+  const maxAttempts = 3;
+
+  while (attempts < maxAttempts) {
+    const password = prompt("Enter Password:", "").toLowerCase();
+    if (password === "PlausableTheory646") {
+      alert("Redirecting...");
+      return;
+    } else {
+      alert("Access Denied - Password Incorrect. Try Again.");
+      attempts++;
+    }
+  }
+  }
+</script>
