@@ -1,4 +1,4 @@
-# Repository Name
+# Home / Smartschool
 
 **Disclaimer:** This repository is provided as-is. By cloning or downloading any content from this repository, you acknowledge and agree to the following:
 
@@ -14,11 +14,6 @@
 ---
 
 ## Getting Started
-
-[Optional: Add instructions on how to use the repository here. If there are specific dependencies or setup instructions, include them.]
-
-Example:
-
 1.  Clone the repository: `git clone [repository URL]`
 2.  Install dependencies: `npm install`
 3.  Run the application: `npm start`
@@ -26,15 +21,7 @@ Example:
 ---
 
 ## Contributing
-
-[Optional: If you are open to contributions, specify your contribution guidelines here.]
-
 ---
 
 ## License
-
-[Optional: Specify the license under which the repository is distributed. If you are not using a specific license, you can state "This repository is provided without a license." However, if you want to use a license, common licenses are MIT, Apache 2.0, or GPL.]
-
-Example:
-
 This repository is distributed under the MIT License. See `LICENSE` for more information.
