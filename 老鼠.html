@@ -46,6 +46,27 @@
         }
     </style>
 </head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Define allowed days (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+            const alwaysAllowedDays = [5, 6, 0]; // Friday (5), Saturday (6), Sunday (0)
+
+            // Get current day and time in UTC
+            const now = new Date();
+            const day = now.getUTCDay(); // Get day in UTC
+            const hoursUTC = now.getUTCHours(); // Get hours in UTC
+
+            // Convert EST time to UTC (EST is UTC -5)
+            const estStartHourUTC = 15 + 5; // 3 PM EST in UTC
+            const estEndHourUTC = 20 + 5;   // 8 PM EST in UTC
+
+            // Check if today is always allowed OR it's within the allowed time window
+            if (!alwaysAllowedDays.includes(day) && !(hoursUTC >= estStartHourUTC && hoursUTC < estEndHourUTC)) {
+                // Replace content with a message
+                document.body.innerHTML = "<meta http-equiv='Refresh' content='0; url=https://ajm19826.github.io/home/takedown.html' />;
+            }
+        });
+    </script>
 <body>
 <script>
     // JavaScript code
