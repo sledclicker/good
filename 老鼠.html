@@ -47,23 +47,32 @@
     </style>
 </head>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+         document.addEventListener("DOMContentLoaded", function() {
             // Define allowed days (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
             const alwaysAllowedDays = [5, 6, 0]; // Friday (5), Saturday (6), Sunday (0)
 
-            // Get current day and time in UTC
+            // Get the current time in EST (New York Time)
             const now = new Date();
-            const day = now.getUTCDay(); // Get day in UTC
-            const hoursUTC = now.getUTCHours(); // Get hours in UTC
+            const options = { timeZone: "America/New_York", hour12: false, hour: "numeric", weekday: "numeric" };
+            const estTime = new Intl.DateTimeFormat("en-US", options).formatToParts(now);
 
-            // Convert EST time to UTC (EST is UTC -5)
-            const estStartHourUTC = 15 + 5; // 3 PM EST in UTC
-            const estEndHourUTC = 20 + 5;   // 8 PM EST in UTC
+            let day = null, hour = null;
+            estTime.forEach(part => {
+                if (part.type === "weekday") day = parseInt(part.value); // Get EST day (1 = Monday, ..., 7 = Sunday)
+                if (part.type === "hour") hour = parseInt(part.value); // Get EST hour (24-hour format)
+            });
+
+            // Convert JavaScript weekday (1 = Monday, ..., 7 = Sunday) to JavaScript's format (0 = Sunday, ..., 6 = Saturday)
+            day = (day === 7) ? 0 : day;
+
+            // Allowed time range in EST
+            const estStartHour = 15; // 3 PM
+            const estEndHour = 20;   // 8 PM
 
             // Check if today is always allowed OR it's within the allowed time window
-            if (!alwaysAllowedDays.includes(day) && !(hoursUTC >= estStartHourUTC && hoursUTC < estEndHourUTC)) {
+            if (!alwaysAllowedDays.includes(day) && !(hour >= estStartHour && hour < estEndHour)) {
                 // Replace content with a message
-                document.body.innerHTML = "<meta http-equiv='Refresh' content='0; url=https://ajm19826.github.io/home/takedown.html' />;
+                document.body.innerHTML = "<h1>Sorry, this website is not available right now.</h1><p>Come back on Friday, Saturday, Sunday, or between 3 PM and 8 PM EST.</p>";
             }
         });
     </script>
